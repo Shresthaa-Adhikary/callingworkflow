@@ -1,0 +1,12 @@
+name: calling reusable workflow the matrix strategy
+on:
+  workflow_dispatch:
+
+jobs:
+  ReuseableMatrixJobForDeployment:
+    strategy:
+      matrix:
+        target: [dev, stage, prod]
+    uses: Shresthaa-Adhikary/reusableworkflow/.github/workflows/rwworkflow.yml@main
+    with:
+      target: ${{ matrix.target }}
