@@ -1,0 +1,12 @@
+name: Calling deployment with target
+on:
+  workflow_dispatch:
+  
+jobs:
+  ReuseableMatrixJobForDeployment:
+    strategy:
+      matrix:
+        target: [dev, stage, prod]
+    uses: Shresthaa-Adhikary/reusableworkflow/.github/workflows/deployment.yml@main
+    with:
+      target: ${{ matrix.target }}
