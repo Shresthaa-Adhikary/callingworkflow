@@ -6,4 +6,4 @@ jobs:
   pass-secret-to-workflow:
     uses: reusableworkflow/.github/workflows/passedsecret.yml@main
     secrets:
-       token: ${{ secrets.access-token }}
+       token: ${{ secrets.access_token }}
